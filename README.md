@@ -1,2 +1,2 @@
-# fastapi-simple-template
-Quickstart Template for FastAPI/Python
+# FLAMES Project
+FastAPI LLM-powered Messaging Engine Service
