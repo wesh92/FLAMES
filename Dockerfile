@@ -1,4 +1,4 @@
-FROM python:3.12-slim-bookworm
+FROM python:3.13-slim-bookworm
 
 ENV UV_COMPILE_BYTECODE=1
 ENV UV_LINK_MODE=copy
@@ -39,4 +39,4 @@ COPY . /app/
 ENV PYTHONPATH="/app:${PYTHONPATH}"
 
 # Run the application using gunicorn
-CMD ["uv", "run", "gunicorn", "main:app", "-w", "4", "-k", "uvicorn.workers.UvicornWorker", "-b", "0.0.0.0:8000"]
+CMD ["uv", "run", "hypercorn", "main:app", "--bind", "0.0.0.0:8000"]
